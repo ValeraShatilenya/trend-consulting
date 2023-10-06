@@ -18,7 +18,7 @@ app-init:
 	docker compose exec php-fpm composer install
 	docker compose exec php-fpm php artisan key:generate
 	docker compose exec php-fpm php artisan storage:link
-	docker compose exec node npm install
+	docker compose exec node yarn install
 	docker compose restart
 
 app-start:
