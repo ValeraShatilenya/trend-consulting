@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["resources/js/*"]
+        },
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "isolatedModules": true,
+        "noEmit": true
+    },
+    "exclude": ["node_modules", "public"]
+}
