@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\Location;
 use App\Models\Warehouse;
+use Carbon\Carbon;
 use Inertia\Testing\AssertableInertia as Assert;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -67,6 +68,7 @@ class LocationTest extends TestCase
             [
                 'page' => 1,
                 'search' => $productName,
+                'datetime' => Carbon::now()->format('Y-m-d H:i:s'),
                 'warehouses' => [$warehouseId]
             ]
         )
