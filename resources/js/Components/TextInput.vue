@@ -1,6 +1,6 @@
 <template>
     <div class="w-full" @click="$refs.search.focus()">
-        <label v-if="label" class="text-sm font-medium text-gray-500 pl-1">
+        <label v-if="label" class="text-sm font-medium pl-1">
             {{ label }}
         </label>
         <div class="relative">
@@ -8,7 +8,7 @@
                 ref="search"
                 :type="type"
                 v-model="proxyModelValue"
-                class="peer outline-none w-full rounded-md border py-2 transition-all hover:border-gray-300"
+                class="peer outline-none w-full rounded-md border py-2 transition-all bg-white dark:bg-stone-700 dark:text-stone-300 dark:border-stone-500 hover:border-gray-300"
                 :class="inputClass"
                 v-bind="$attrs"
             />

@@ -1,5 +1,7 @@
 <template>
-    <div class="border rounded-md bg-white">
+    <div
+        class="border rounded-md bg-white transition-all dark:text-white dark:bg-stone-700 dark:border-stone-500"
+    >
         <table class="w-full text-sm bg-transparent">
             <thead>
                 <tr>

@@ -7,7 +7,7 @@
             placeholder="Enter the product name"
         />
         <button
-            class="border bg-white w-10 h-10 rounded-md flex justify-center items-center"
+            class="border bg-white w-10 h-10 rounded-md flex justify-center items-center transition-all dark:bg-stone-600 dark:border-stone-500 dark:text-stone-300"
             @click="showFilter = !showFilter"
         >
             <SvgIcon type="mdi" :path="icons.mdiFilterVariant" />
@@ -37,7 +37,7 @@
                 @update:modelValue="updateWarehouses"
             />
             <button
-                class="bg-primary-500 text-white px-3 h-10 rounded-md flex items-center justify-center gap-2"
+                class="bg-primary-500 text-white px-3 h-10 rounded-md flex items-center justify-center gap-2 dark:bg-primary-800 dark:text-black"
                 @click="clearFilter"
             >
                 <SvgIcon type="mdi" :path="icons.mdiVacuum" />

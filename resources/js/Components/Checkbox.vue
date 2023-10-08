@@ -19,7 +19,7 @@
         </div>
         <label
             @click="proxyModelValue = !proxyModelValue"
-            class="cursor-pointer"
+            class="cursor-pointer dark:text-stone-400"
             >{{ label }}</label
         >
     </div>

@@ -75,10 +75,10 @@ ul {
             @apply ml-auto;
         }
         &:not(.active) {
-            @apply cursor-pointer border-transparent text-stone-500;
+            @apply cursor-pointer border-transparent text-stone-500 dark:text-stone-300;
         }
         &.active {
-            @apply cursor-not-allowed border-primary-600 text-primary-700;
+            @apply cursor-not-allowed border-primary-600 text-primary-700 dark:border-primary-400 dark:text-primary-300;
         }
         &.dots {
             @apply cursor-not-allowed text-xl leading-3;
@@ -87,7 +87,7 @@ ul {
             @apply cursor-not-allowed opacity-50;
         }
         &:not(.active, .disabled) {
-            @apply hover:border-stone-300 hover:text-stone-800;
+            @apply hover:border-stone-300 hover:text-stone-800 dark:hover:text-stone-200;
         }
     }
 }

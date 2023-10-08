@@ -2,12 +2,12 @@
     <div ref="root" class="search-dropdown relative">
         <button
             :class="open ? 'border-gray-400' : 'border-gray-200'"
-            class="rounded-md h-10 border w-full bg-white pl-4"
+            class="rounded-md h-10 border w-full bg-white pl-4 transition-all dark:border-stone-500 dark:bg-stone-700"
             @click="onClickTrigger"
         >
             <div class="grid gap-1 grid-cols-[1fr_auto]">
                 <div
-                    class="truncate text-left"
+                    class="truncate text-left dark:text-stone-300"
                     :class="{
                         'text-gray-400': !open && !modelValue.length,
                     }"
@@ -18,7 +18,7 @@
                     <SvgIcon
                         type="mdi"
                         :path="icons.mdiChevronUp"
-                        class="shrink-0 transition-all duration-300 ease-in-out cursor-pointer"
+                        class="shrink-0 transition-all duration-300 ease-in-out cursor-pointer dark:text-stone-400"
                         :rotate="!open ? 180 : 0"
                     />
                 </div>
@@ -38,13 +38,13 @@
                 class="mt-2 rounded-md shadow-lg w-full origin-top-left left-0 overflow-y-auto max-h-56 sm:absolute sm:z-50"
             >
                 <div
-                    class="rounded-md ring-1 ring-black ring-opacity-5 py-2 bg-white"
+                    class="rounded-md ring-1 ring-black ring-opacity-5 py-2 bg-white dark:bg-stone-700"
                 >
                     <div @click.stop>
                         <div
                             v-for="(item, index) in data"
                             :key="index"
-                            class="py-2 px-5 cursor-pointer transition-all hover:bg-primary-50"
+                            class="py-2 px-5 cursor-pointer transition-all hover:bg-primary-50 dark:hover:bg-stone-600"
                             @click.stop="onToggleItem(item)"
                         >
                             <Checkbox

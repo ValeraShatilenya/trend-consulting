@@ -53,10 +53,27 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .custom-date-picker {
-    &::v-deep(.dp__action_select) {
+    .dp__action_select {
         @apply bg-sky-600;
+    }
+    .dp__input {
+        @apply transition-all;
+    }
+}
+.dark {
+    .custom-date-picker {
+        .dp__input {
+            @apply bg-stone-700 text-stone-300;
+        }
+        .dp__menu,
+        .dp__overlay {
+            @apply bg-stone-700;
+        }
+        .dp__pointer.dp__input {
+            @apply border-stone-500;
+        }
     }
 }
 </style>

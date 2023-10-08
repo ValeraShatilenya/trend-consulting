@@ -16,7 +16,7 @@
                     <SvgIcon
                         type="mdi"
                         :path="icons.mdiContentCopy"
-                        class="invisible group-hover:visible transition-all cursor-pointer text-black text-opacity-30 hover:text-opacity-60"
+                        class="invisible group-hover:visible transition-all cursor-pointer text-black dark:text-white text-opacity-30 hover:text-opacity-60"
                         size="16"
                         @click="copyToClipboard(item.product.name)"
                     />
@@ -28,7 +28,9 @@
                         :style="{ background: item.product.color.hex }"
                         class="w-5 h-5 rounded border transition-all hover:scale-110"
                     />
-                    <div class="text-xs text-stone-600">
+                    <div
+                        class="text-xs text-stone-600 transition-all dark:text-stone-400"
+                    >
                         ({{ item.product.color.name }})
                     </div>
                 </div>
