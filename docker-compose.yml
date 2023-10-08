@@ -19,6 +19,21 @@ services:
         ports:
             - "7012:3306"
 
+    mysql-test:
+        image: mysql:8.0
+        working_dir: /application
+        container_name: trend-consulting-mysql-test
+        volumes:
+            - .:/application
+            - trend-consulting-mysql-test-volume:/var/lib/mysql
+        environment:
+            MYSQL_ROOT_PASSWORD: "password"
+            MYSQL_DATABASE: "trend-consulting-test"
+            MYSQL_USER: "username"
+            MYSQL_PASSWORD: "password"
+        ports:
+            - "7013:3306"
+
     webserver:
         image: nginx:alpine
         working_dir: /application
@@ -57,3 +72,4 @@ services:
 
 volumes:
     trend-consulting-mysql-volume:
+    trend-consulting-mysql-test-volume:
