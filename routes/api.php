@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\LocationsController;
+use App\Http\Controllers\Api\WarehousesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/locations', [LocationsController::class, 'index'])->name('locations.index');
+
+Route::get('/warehouses/all', [WarehousesController::class, 'all'])->name('warehouses.all');
