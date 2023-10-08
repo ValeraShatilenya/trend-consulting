@@ -5,6 +5,7 @@
         :format="format"
         :clearable="clearable"
         :auto-apply="autoApply"
+        :locale="locale"
         class="custom-date-picker"
     />
 </template>
@@ -12,6 +13,8 @@
 <script>
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
+
+import { getLocale } from "@/Utils";
 
 export default {
     components: {
@@ -49,29 +52,30 @@ export default {
                 this.$emit("update:modelValue", val);
             },
         },
+        locale: getLocale,
     },
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .custom-date-picker {
-    .dp__action_select {
+    &::v-deep(.dp__action_select) {
         @apply bg-sky-600;
     }
-    .dp__input {
+    &::v-deep(.dp__input) {
         @apply transition-all;
     }
 }
 .dark {
     .custom-date-picker {
-        .dp__input {
+        &::v-deep(.dp__input) {
             @apply bg-stone-700 text-stone-300;
         }
-        .dp__menu,
-        .dp__overlay {
+        &::v-deep(.dp__menu),
+        &::v-deep(.dp__overlay) {
             @apply bg-stone-700;
         }
-        .dp__pointer.dp__input {
+        &::v-deep(.dp__pointer.dp__input) {
             @apply border-stone-500;
         }
     }

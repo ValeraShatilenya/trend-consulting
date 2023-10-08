@@ -15,10 +15,10 @@
         >
             <div v-if="index === 0">
                 <SvgIcon type="mdi" :path="icons.mdiArrowLeftThin" size="24" />
-                Previous
+                {{ $t("Previous") }}
             </div>
             <div v-else-if="index === data.links.length - 1">
-                Next
+                {{ $t("Next") }}
                 <SvgIcon type="mdi" :path="icons.mdiArrowRightThin" size="24" />
             </div>
             <template v-else>

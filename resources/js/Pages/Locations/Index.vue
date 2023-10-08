@@ -78,14 +78,30 @@ export default {
                 datetime: getQuery().datetime || this.now,
                 warehouses: [],
             },
-            columns: Object.freeze([
-                { title: "Product name", field: "product.name" },
-                { title: "Warehouse", field: "warehouse.name", centered: true },
-                { title: "Type", field: "product.type.name", centered: true },
-                { title: "Color", field: "color" },
-                { title: "From", field: "period_start_iso", centered: true },
-                { title: "To", field: "period_end_iso", centered: true },
-            ]),
+            columns: [
+                { title: this.$t("Product name"), field: "product.name" },
+                {
+                    title: this.$t("Warehouse"),
+                    field: "warehouse.name",
+                    centered: true,
+                },
+                {
+                    title: this.$t("Type"),
+                    field: "product.type.name",
+                    centered: true,
+                },
+                { title: this.$t("Color"), field: "color" },
+                {
+                    title: this.$t("From"),
+                    field: "period_start_iso",
+                    centered: true,
+                },
+                {
+                    title: this.$t("To"),
+                    field: "period_end_iso",
+                    centered: true,
+                },
+            ],
             icons: Object.freeze({ mdiContentCopy }),
         };
     },

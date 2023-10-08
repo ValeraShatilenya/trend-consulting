@@ -4,7 +4,7 @@
             :modelValue="search"
             @update:modelValue="updateSearch"
             search
-            placeholder="Enter the product name"
+            :placeholder="$t('Enter the product name')"
         />
         <button
             class="border bg-white w-10 h-10 rounded-md flex justify-center items-center transition-all dark:bg-stone-600 dark:border-stone-500 dark:text-stone-300"
@@ -33,15 +33,15 @@
                 :data="warehousesList"
                 label-field="name"
                 value-field="id"
-                placeholder="Select warehouses"
+                :placeholder="$t('Select warehouses')"
                 @update:modelValue="updateWarehouses"
             />
             <button
-                class="bg-primary-500 text-white px-3 h-10 rounded-md flex items-center justify-center gap-2 dark:bg-primary-800 dark:text-black"
+                class="bg-primary-500 text-white px-3 h-10 rounded-md flex items-center justify-center gap-2 transition-all dark:bg-primary-800 dark:text-black"
                 @click="clearFilter"
             >
                 <SvgIcon type="mdi" :path="icons.mdiVacuum" />
-                Clear filter
+                {{ $t("Clear filter") }}
             </button>
         </div>
     </div>

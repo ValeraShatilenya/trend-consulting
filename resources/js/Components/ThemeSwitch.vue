@@ -48,12 +48,10 @@ export default {
 
 <style lang="scss" scoped>
 label {
-    @apply block w-[4.5rem] h-8 relative bg-gray-100 transition-all duration-300 cursor-pointer rounded-full box-content border dark:border-stone-600;
-    box-shadow: inset 0px 3px 6px rgba(0, 0, 0, 0.15);
+    @apply block w-[4.5rem] h-8 relative bg-white transition-all duration-300 cursor-pointer rounded-full box-content border dark:border-stone-600;
     &:after {
         @apply content-[''] absolute top-1 left-1 w-6 h-6 rounded-full transition-all duration-300;
         background: linear-gradient(180deg, #ffcc89, #d8860b);
-        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     }
     &:active:after {
         @apply w-1/2;
@@ -75,7 +73,7 @@ input {
             @apply -translate-x-full left-[calc(100%-0.25rem)];
             background: linear-gradient(180deg, #777, #3a3a3a);
         }
-        @apply bg-stone-900;
+        @apply bg-stone-700;
         svg {
             &.sun {
                 @apply fill-stone-400;

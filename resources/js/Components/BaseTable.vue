@@ -49,7 +49,7 @@
                                     size="100"
                                 />
                                 <p class="text-lg text-black text-opacity-50">
-                                    Sorry, we didn't find anything!
+                                    {{ $t("Sorry, we didn't find anything!") }}
                                 </p>
                             </div>
                         </td>
