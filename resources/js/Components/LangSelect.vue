@@ -1,5 +1,5 @@
 <template>
-    <select :value="activeLang" @change="onLangSelect">
+    <select :value="activeLocale" @change="onLangSelect">
         <option v-for="lang in landList" :key="lang.value" :value="lang.value">
             {{ lang.name }}
         </option>
@@ -13,7 +13,7 @@ import { getLocale } from "@/Utils";
 
 export default {
     data: () => ({
-        activeLang: getLocale(),
+        activeLocale: getLocale(),
         landList: Object.freeze([
             { name: "EN", value: "en" },
             { name: "RU", value: "ru" },
@@ -21,10 +21,10 @@ export default {
     }),
     methods: {
         onLangSelect(event) {
-            const language = event.target.value;
-            router.get(route("language", { language }));
-            this.activeLang = language;
-            loadLanguageAsync(language);
+            const locale = event.target.value;
+            router.get(route("locale", { locale }));
+            this.activeLang = locale;
+            loadLanguageAsync(locale);
         },
     },
 };
