@@ -38,8 +38,8 @@ node-bash:
 	docker compose exec node bash
 
 permissions:
-	chmod -R 777 storage
-	chmod -R 777 bootstrap/cache
+	sudo chmod -R 777 storage
+	sudo chmod -R 777 bootstrap/cache
 
 clear:
 	docker compose exec php-fpm php artisan cache:clear
