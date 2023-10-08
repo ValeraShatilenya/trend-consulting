@@ -16,4 +16,10 @@ use App\Http\Controllers\LocationsController;
 
 Route::get('/locations', [LocationsController::class, 'index'])->name('locations.index');
 
+// Change Lang
+Route::get('language/{language}', function ($language) {
+    session()->put('locale', $language);
+    return redirect()->back();
+})->name('language');
+
 Route::fallback(fn () => redirect()->route('locations.index'));
