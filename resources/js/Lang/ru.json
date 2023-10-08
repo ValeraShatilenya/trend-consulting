@@ -1,0 +1,15 @@
+{
+    "Product name": "Товар",
+    "Warehouse": "Склад",
+    "Type": "Тип",
+    "Color": "Цвет",
+    "From": "С",
+    "To": "По",
+    "Clear filter": "Очистить фильтр",
+    "Enter the product name": "Введите название продукта",
+    "Select warehouses": "Выберите склады",
+    "Previous": "Назад",
+    "Next": "Вперёд",
+    "Text copied!": "Текст скопирован!",
+    "Sorry, we didn't find anything!": "Извините, мы ничего не нашли!"
+}

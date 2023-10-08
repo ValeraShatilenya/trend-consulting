@@ -1,4 +1,5 @@
 import { usePage } from "@inertiajs/vue3";
+import { trans } from "laravel-vue-i18n";
 import { useToast } from "vue-toastification";
 
 const toast = useToast();
@@ -9,6 +10,10 @@ function getAppName() {
 
 function getQuery() {
     return usePage().props.query;
+}
+
+function getLocale() {
+    return usePage().props.locale;
 }
 
 function getValueFromField(item, field) {
@@ -26,9 +31,9 @@ function isEmpty(value) {
 
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text);
-    toast.success("Text copied!", {
+    toast.success(trans("Text copied!"), {
         timeout: 2000,
     });
 }
 
-export { getAppName, getQuery, getValueFromField, copyToClipboard };
+export { getAppName, getQuery, getLocale, getValueFromField, copyToClipboard };
