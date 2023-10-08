@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
+use Inertia\Response as InertiaResponse;
 use App\Actions\Locations\IndexLocations;
 use App\Actions\Warehouses\AllWarehouses;
 use App\Http\Requests\Locations\IndexLocationsRequest;
 
 class LocationsController extends Controller
 {
-    public function index(IndexLocationsRequest $request)
+    public function index(IndexLocationsRequest $request): InertiaResponse
     {
         return Inertia::render('Locations/Index', [
             'locations' => fn () => IndexLocations::run($request),
