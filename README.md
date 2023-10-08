@@ -80,3 +80,23 @@ git clone https://github.com/ValeraShatilenya/trend-consulting.git
 2. Введите пароль устройства для доступа к папкам storage, bootstrap/cache
 3. make start
 4. Перейдите по ссылке http://localhost:8080/
+
+Запуск тестов:  
+make test
+
+Если отсутствует make на устройстве:
+
+1.  docker compose up -d
+2.  cp .env.example .env
+3.  docker compose exec php-fpm composer install
+4.  docker compose exec php-fpm php artisan key:generate
+5.  docker compose exec php-fpm php artisan migrate
+6.  docker compose exec php-fpm php artisan storage:link
+7.  docker compose exec php-fpm php artisan db:seed
+8.  docker compose exec node yarn install
+9.  docker compose restart
+10. sudo chmod -R 777 storage
+11. sudo chmod -R 777 bootstrap/cache
+
+Запуск тестов:  
+docker compose exec php-fpm php artisan test --stop-on-failure
