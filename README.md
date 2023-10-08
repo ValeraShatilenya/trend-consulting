@@ -1,3 +1,5 @@
+![](https://buhpress.ru/wp-content/uploads/2021/08/peremeschenie-tovarov-720x400.jpg)
+
 ## Основые зависимости
 
 -   PHP - 8.1.23
