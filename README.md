@@ -77,9 +77,10 @@ git clone https://github.com/ValeraShatilenya/trend-consulting.git
 Если присутствует make на устройстве:
 
 1. make init
-2. Введите пароль устройства для доступа к папкам storage, bootstrap/cache
-3. make start
-4. Перейдите по ссылке http://localhost:8080/
+2. make permissions
+3. Введите пароль устройства для доступа к папкам storage, bootstrap/cache
+4. make start
+5. Перейдите по ссылке http://localhost:8080/
 
 Запуск тестов:  
 make test
@@ -97,6 +98,8 @@ make test
 9.  docker compose restart
 10. sudo chmod -R 777 storage
 11. sudo chmod -R 777 bootstrap/cache
+12. docker compose exec node yarn run dev
+13. Перейдите по ссылке http://localhost:8080/
 
 Запуск тестов:  
 docker compose exec php-fpm php artisan test --stop-on-failure
