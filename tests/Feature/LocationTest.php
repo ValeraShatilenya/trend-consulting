@@ -146,7 +146,6 @@ class LocationTest extends TestCase
                 fn (AssertableJson $json) =>
                 $json
                     ->has('data.0.period_start_iso')
-                    ->has('data.0.period_start_iso')
                     ->has('data.0.period_end_iso')
                     ->has('data.0.product')
                     ->has('data.0.product.name')
