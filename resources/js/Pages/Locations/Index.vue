@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <DefaultLayout :title="$t('Locations')">
         <LocationsFilter
             v-model:search="filter.search"
             v-model:datetime="filter.datetime"
@@ -38,7 +38,7 @@
                 </div>
             </template>
         </BaseTable>
-    </div>
+    </DefaultLayout>
 </template>
 
 <script>
@@ -54,11 +54,11 @@ import LocationsFilter from "./Components/LocationsFilter.vue";
 
 export default {
     components: {
+        DefaultLayout,
         SvgIcon,
         BaseTable,
         LocationsFilter,
     },
-    layout: DefaultLayout,
     props: {
         locations: {
             type: Object,
