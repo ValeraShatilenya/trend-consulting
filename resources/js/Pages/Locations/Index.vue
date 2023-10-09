@@ -9,7 +9,9 @@
         />
         <BaseTable :data="locations" :columns="columns" striped>
             <template #td-product.name="{ item }">
-                <div class="flex items-center gap-2 group">
+                <div
+                    class="flex items-center gap-2 group flex-row-reverse md:flex-row"
+                >
                     <div>
                         {{ item.product.name }}
                     </div>

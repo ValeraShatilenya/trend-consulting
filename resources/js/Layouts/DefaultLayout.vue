@@ -1,7 +1,7 @@
 <template>
     <Head :title="title" />
     <div
-        class="min-h-screen transition-all bg-zinc-50 dark:bg-stone-800 flex flex-col items-center"
+        class="min-h-screen transition-all bg-zinc-50 dark:bg-stone-800 flex flex-col items-center pb-3"
     >
         <Navigation />
         <div class="container mt-3 px-2 lg:px-0">

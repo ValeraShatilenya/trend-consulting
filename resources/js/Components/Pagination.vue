@@ -1,5 +1,5 @@
 <template>
-    <ul v-show="data.last_page !== 1">
+    <ul v-show="data.last_page !== 1" class="hidden md:flex">
         <Link
             v-for="({ url, label, active }, index) in data.links"
             :key="index"
@@ -26,6 +26,28 @@
             </template>
         </Link>
     </ul>
+    <ul v-show="data.last_page !== 1" class="flex md:hidden">
+        <Link
+            v-for="({ url }, index) in shortLinks"
+            :key="index"
+            :class="{
+                disabled: !url,
+            }"
+            :href="url || ''"
+            as="li"
+            type="button"
+            preserve-state
+        >
+            <div v-if="index === 0">
+                <SvgIcon type="mdi" :path="icons.mdiArrowLeftThin" size="24" />
+                {{ $t("Previous") }}
+            </div>
+            <div v-else>
+                {{ $t("Next") }}
+                <SvgIcon type="mdi" :path="icons.mdiArrowRightThin" size="24" />
+            </div>
+        </Link>
+    </ul>
 </template>
 
 <script>
@@ -50,6 +72,11 @@ export default {
             },
         },
     },
+    computed: {
+        shortLinks() {
+            return [this.data.links.at(0), this.data.links.at(-1)];
+        },
+    },
     setup: () => ({
         DOTS,
         icons: { mdiArrowLeftThin, mdiArrowRightThin },
@@ -59,7 +86,7 @@ export default {
 
 <style scoped lang="scss">
 ul {
-    @apply flex justify-center gap-0.5 border-t;
+    @apply justify-center gap-0.5;
     li {
         @apply flex items-center justify-center px-2 min-w-[2.75rem] py-2 outline-none border-t-2 transition-all;
         &:first-child,
