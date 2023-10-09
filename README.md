@@ -1,4 +1,4 @@
-![](https://buhpress.ru/wp-content/uploads/2021/08/peremeschenie-tovarov-720x400.jpg)
+<img align="center" width="100%" src="https://buhpress.ru/wp-content/uploads/2021/08/peremeschenie-tovarov-720x400.jpg">
 
 ## Основые зависимости
 
