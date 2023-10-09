@@ -78,7 +78,7 @@ git clone https://github.com/ValeraShatilenya/trend-consulting.git
 
 Если присутствует make на устройстве:
 
-1. make init
+1. make init (При ошибке необходимо ввести второй раз)
 2. make permissions
 3. Введите пароль устройства для доступа к папкам storage, bootstrap/cache
 4. make start
