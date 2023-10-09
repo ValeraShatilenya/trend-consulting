@@ -55,11 +55,11 @@
                                     <SvgIcon
                                         type="mdi"
                                         :path="icons.mdiMagnifyMinusOutline"
-                                        class="text-black text-opacity-30"
+                                        class="text-black text-opacity-30 dark:text-white dark:text-opacity-60"
                                         size="100"
                                     />
                                     <p
-                                        class="text-lg text-black text-opacity-50"
+                                        class="text-lg text-black dark:text-white text-opacity-50"
                                     >
                                         {{
                                             $t(
@@ -73,7 +73,7 @@
                     </template>
                 </tbody>
             </table>
-            <div class="border-t">
+            <div v-if="data.meta.total || data.total" class="border-t">
                 <Pagination :data="data.meta ? data.meta : data" />
             </div>
         </div>
@@ -82,7 +82,7 @@
                 <div
                     v-for="item in data.data"
                     :key="item.id"
-                    class="bg-white mb-3 border rounded-md"
+                    class="bg-white mb-3 border rounded-md dark:text-white dark:bg-stone-700"
                 >
                     <div
                         v-for="(column, columnIndex) in columns"
@@ -102,19 +102,22 @@
             </template>
             <div
                 v-else
-                class="flex flex-col items-center justify-center pt-1 pb-4"
+                class="flex flex-col items-center justify-center pt-1 pb-4 bg-white border rounded-md dark:bg-stone-700"
             >
                 <SvgIcon
                     type="mdi"
                     :path="icons.mdiMagnifyMinusOutline"
-                    class="text-black text-opacity-30"
+                    class="text-black text-opacity-30 dark:text-white dark:text-opacity-60"
                     size="100"
                 />
-                <p class="text-lg text-black text-opacity-50">
+                <p class="text-lg text-black dark:text-white text-opacity-50">
                     {{ $t("Sorry, we didn't find anything!") }}
                 </p>
             </div>
-            <div class="bg-white rounded-md border">
+            <div
+                v-if="data.meta.total || data.total"
+                class="bg-white rounded-md border"
+            >
                 <Pagination :data="data.meta ? data.meta : data" />
             </div>
         </div>
