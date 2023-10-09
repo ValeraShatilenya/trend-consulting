@@ -122,7 +122,7 @@ export default {
         textTrigger() {
             return !this.modelValue.length
                 ? this.placeholder
-                : `${this.modelValue.length} selected`;
+                : `${this.modelValue.length} ${this.$t("selected")}`;
         },
     },
     methods: {
